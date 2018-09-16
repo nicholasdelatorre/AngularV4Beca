@@ -1,0 +1,43 @@
+
+    <!-- <p *ngFor='let NOME_VARIAVEL of NOME_ARRAY'></p> -->
+    <!-- <p *ngFor='let num of numbers'> {{ num }} </p> -->
+    <div class="container">
+
+    <div class="col-md-6 div-form">
+
+    <h1>{{title}}</h1>
+
+    <p>{{currentUser | json}}</p>
+
+    <div class="form-group">
+        <label>Nome: </label>
+        <input type="text" #txtNomeUsuario  placeholder="Nome" [(ngModel)]="currentUser.name" class="form-control">
+    </div>
+
+  <!-- <div  *ngIf='!isEdit()'> -->
+      <div class="form-group">
+        <label>Senha: </label>
+        <input type="password" #txtSenhaUsuario placeholder="Senha" [(ngModel)]="currentUser.password"  class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Email: </label>
+        <input type="text" #txtEmailUsuario     placeholder="Email" [(ngModel)]="currentUser.email"  class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Login: </label>
+        <input type="text" #txtLoginUsuario   placeholder="Login" [(ngModel)]="currentUser.login"  class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button (click)='doCreateUsuario(); doLimpar()' [disabled]="!canSave()" class="btn btn-success form-control">Criar Usuário</button>
+      </div>
+  <!-- </div> -->
+    
+    <!-- <button (click)='doUpdateUsuario()'>Atualizar Usuário</button> -->
+
+    </div>
+</div>
+    
+   

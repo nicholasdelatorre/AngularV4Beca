@@ -1,0 +1,61 @@
+
+<div class="container">
+
+<div class="col-md-6 div-form">
+
+    <h1>
+        {{ title }}
+   </h1>
+
+  <p>{{nameToFind|json}}</p>
+
+  <div class="form-group">
+    <label><b>Filtro:</b></label>
+    <input type="text" [(ngModel)]="nameToFind" class="form-control"/> 
+  </div>
+
+  <div class="form-group">
+    <button (click)="doBusca()" class="btn btn-primary form-control">Buscar </button>
+
+    <button (click)="doLimpa()" class="btn btn-danger form-control">Limpar</button>
+  </div>
+</div>
+
+
+<style>
+
+</style>
+
+<div *ngIf='hasData()'>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Superior</th>
+      <th>Login</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let user of dataFromApi'>
+      <td>{{user.Name}}</td>
+      <td>{{user.UserType.Description}}</td>
+      <td>{{user.Superior ==null ? 'N/A' : user.Superior.Name  }}</td>
+      <td>{{user.Login}}</td>
+      <td>
+        <button class='btn btn-primary' routerLinkActive='routerLinkActive' [routerLink]="['/user-edit', user.Id]" >Editar</button> 
+      </td>
+      <td>
+        <button class='btn btn-danger' (click)='doDelete(user.Id)'>Deletar</button>
+      </td>
+    <tr>
+  </tbody>
+</table>
+
+
+
+<!--  > -->
+
+

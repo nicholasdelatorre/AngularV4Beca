@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+h1{
+    text-align: center;
+}
+
+th, td{
+    text-align: center;
+}
+
+
+th,td {border: 1px solid;}
+
+.btn{
+    margin-top: 7px;
+}
+
+.div-form{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #343A40;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 15px;
+}
+
+
+
+.div-form p{
+    color: #ffffff;
+}
+
+.div-form label{
+    color: #ffffff;
+}
+
+h1{
+    color: #ffffff;
+}
+
+table{
+    margin-top: 30px;
+    
+}
